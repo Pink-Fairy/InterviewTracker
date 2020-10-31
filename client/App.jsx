@@ -4,7 +4,7 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <button>blah</button>
+        <button>dumb</button>
       </div>
     );
   }
