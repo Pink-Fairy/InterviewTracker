@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const tasksSchema = new mongoose.Schema({
 title: {
     type: String,
-    require: true
+    required: true
 },
 date: {
     type: Date,
@@ -11,7 +11,7 @@ date: {
     },
 user_id: {
     type: String,
-    require: true
+    required: true
 }
 }, {
     timestamps: true

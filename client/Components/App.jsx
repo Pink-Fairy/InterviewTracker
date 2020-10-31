@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+// import Mainmenu from "./Components/Mainmenu";
+
 
 export default class App extends Component {
   render() {
     return (
       <div>
-        <button>dumb</button>
-      </div>
-    );
+        hello
+        </div>
+    )
   }
 }

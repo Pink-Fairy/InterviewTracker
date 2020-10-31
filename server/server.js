@@ -1,19 +1,23 @@
 const express = require('express');
 const dotenv = require('dotenv') // .config(); // has our config/variables
 const path = require('path');
-// const bodyParser = require('body-parser'); replace by the express.json()
+// const bodyParser = require('body-parser'); // replace by the express.json()
 const cors = require('cors');
 const mongoose = require('mongoose');
-
 // requiring routers 
 const userRouter = require('./routers/userRouter');
 const tasksRouter = require('./routers/tasksRouter');
 const jobListRouter = require('./routers/jobListRouter');
 
+
+
 const app = express();
 app.use(express.json());
 app.use(cors()); 
 app.use(express.static('build'));
+
+
+
 
 // to load config file
 dotenv.config({ path: './config/config.env' }); // where we place our global variables, port also goes here. can also store Mongo_URI
@@ -23,7 +27,7 @@ const PORT = process.env.PORT || 5000;
 // set up routers for all the databases we have
 
 app.use('/users', userRouter);
-app.use('/tasks', tasksRouter);
+app.use('/api/tasks', tasksRouter);
 app.use('/jobs', jobListRouter);
 
 const connectDB = async () => {
