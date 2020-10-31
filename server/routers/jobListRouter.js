@@ -7,8 +7,10 @@ const router = express.Router();
 
 // this router is activated on:  /jobs
 
-// GET - get all jobs
-router.get('/', (req, res) => res.status(200).json())
+// GET - get all jobs for that specific user
+router.get('/:id', jobListController.getAllJobs, (req, res) => {
+  res.status(200).json(res.locals.jobs);
+});
 
 // GET - get one job
 router.get('/:id', (req, res) => res.status(200).json())

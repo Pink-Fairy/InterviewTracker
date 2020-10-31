@@ -10,7 +10,11 @@ const jobListSchema = new mongoose.Schema({
   submitted: String, 
   application: String, 
   interview: String, 
-  offer: String
-})
+  offer: String,
+  user_id: {
+    type: String,
+    require: true
+}
+});
 
 module.exports = mongoose.model('jobList', jobListSchema);
