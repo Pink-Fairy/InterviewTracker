@@ -6,8 +6,6 @@ import './styles/style.css';
 // // uncomment so that webpack can bundle styles
 // import styles from './scss/application.scss';
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <App />,
   document.getElementById("root")
 );

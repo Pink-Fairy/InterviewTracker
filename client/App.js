@@ -36,8 +36,3 @@ return (
 }
 
 export default App;
-
-{/* <div>
-<h1>Hello</h1>
-<MainContainer />
-</div> */}

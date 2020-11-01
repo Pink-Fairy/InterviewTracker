@@ -20,7 +20,8 @@ app.use(express.static('build'));
 
 
 // to load config file
-dotenv.config({ path: './config/config.env' }); // where we place our global variables, port also goes here. can also store Mongo_URI
+// where we place our global variables, port also goes here. can also store Mongo_URI
+dotenv.config({ path: './config/config.env' }); 
 
 const PORT = process.env.PORT || 5000;
 
