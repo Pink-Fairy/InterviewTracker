@@ -27,7 +27,7 @@ const userController = {
           })
       } catch (error) {
          return res.status(500).json({
-            message: error.message
+            message: "problem with register"
           })
       }
     },
@@ -69,7 +69,7 @@ const userController = {
     
     verifiedToken: (req, res) => {
       try {
-         const token = req.Header('Authorization');
+        const token = req.header("Authorization");
          if(!token) return res.send(false); // prevent to log in 
 
          // check if token exist 

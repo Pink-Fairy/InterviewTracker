@@ -13,10 +13,11 @@ router.route('/')
     .post(auth, tasksController.createOneTask)
 
 router.route('/:id')
-    // .get(auth, noteController.getNote)
     .put(auth, tasksController.updateTask)
     .delete(auth, tasksController.deleteTask)
 
+// router.route('/')
+// .get((req,res) => res.json({msg: "task test"}))
 
 module.exports = router; 
 

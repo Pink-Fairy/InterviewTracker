@@ -1,28 +1,19 @@
 const express = require('express');
-
+const auth = require("../controllers/auth");
 const jobListController = require("../controllers/jobListController");
 
 const router = express.Router();
 
 
-// this router is activated on:  /jobs
+// this router is activated on:  /api/jobs
 
-// GET - get all jobs for that specific user
-router.get('/:id', jobListController.getAllJobs, (req, res) => {
-  res.status(200).json(res.locals.jobs);
-});
+router.route('/')
+  .get(auth, jobListController.getAlljobs)
+  .post(auth, jobListController.createOneJob)
 
-// GET - get one job
-router.get('/:id', (req, res) => res.status(200).json())
-
-// POST - Create one job
-router.post('/', (req, res) => res.status(200).json())
-
-// PUT - Update one job
-router.put('/:id', (req, res) => res.status(200).json())
-
-// DELETE - Delete one job
-router.delete('/:id', (req, res) => res.status(200).json())
+router.route('/:id')
+  .put(auth, jobListController.updateJob)
+  .delete(auth, jobListController.deleteJob)
 
 
 
