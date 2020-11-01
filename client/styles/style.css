@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.grid-container {
+  /* height: 100vh;
+  width: 100vw; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+}
+
+.Menu {
+  grid-area: 1 / 1 / 7 / 2;
+  background-color: aqua;
+}
+
+.Header {
+  grid-area: 1 / 2 / 2 / 6;
+  background-color: bisque;
+}
+
+.Calendar {
+  grid-area: 2 / 2 / 4 / 4;
+  background-color: coral;
+}
+
+.Task {
+  grid-area: 2 / 4 / 4 / 6;
+  background-color: red;
+}
+
+.Job {
+  grid-area: 4 / 2 / 7 / 6;
+  background-color: pink;
+}
+
+.AddJob {
+  grid-area: 4 / 1 / 7 / 2;
+  background-color: cornflowerblue;
+}
+/* 
+* {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #29a8ab;
+  padding-left: 115px;
+  font-size: 18px;
+}
+p {
+  font-size: 22px;
+}
+
+input {
+  border-style: none;
+  border-radius: 7px;
+}
+textarea {
+  border-style: none;
+  border-radius: 7px;
+}
+
+button {
+  border-style: none;
+  border-radius: 7px !important;
+  background-color: #cccccc;
+  box-shadow: none !important;
+  margin-top: 5px;
+}
+
+body {
+  background: #eeeeee;
+}
+
+.login-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+.login input,
+.register input {
+  margin-bottom: 15px;
+}
+.login,
+.register {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #eeeeee;
+}
+.login-page h2,
+.login-page h3 {
+  color: #29a8ab;
+  padding-left: 90px;
+}
+.login-page h3 {
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 15px;
+}
+.login-page p {
+  margin: 10px 0;
+  color: #29a8ab;
+  margin-left: 80px;
+}
+.login-page span:hover {
+  color: #ff8b94;
+  cursor: pointer;
+} */
