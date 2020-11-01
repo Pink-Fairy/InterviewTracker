@@ -28,7 +28,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use('/users', userRouter);
 app.use('/api/tasks', tasksRouter);
-app.use('/jobs', jobListRouter);
+app.use('/api/jobs', jobListRouter);
 
 const connectDB = async () => {
   try {
