@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import regeneratorRuntime from "regenerator-runtime";
 import axios from 'axios';
 import MainContainer from './Containers/MainContainer.jsx';
-import LoginPage from './Login/LoginPage.jsx';
+import Login from './Login/Login.jsx';
 
 function App() {
  const [isLogin, setIsLogin] = useState(false);
@@ -25,11 +26,10 @@ function App() {
 
 return (
   <div className="App">
-
     {
       isLogin 
       ? <MainContainer setIsLogin={setIsLogin} />
-      : <LoginPage setIsLogin={setIsLogin} />
+      : <Login setIsLogin={setIsLogin} />
     }
   </div>
 )

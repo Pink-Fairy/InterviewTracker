@@ -1,14 +1,15 @@
 import React, { useState } from 'react'; 
+import regeneratorRuntime from "regenerator-runtime";
 import axios from 'axios'; 
 
-const LoginPage = ({setIsLogin}) => {
+const Login = ({setIsLogin}) => {
     const [user, setUser] = useState({ name: '', email: '', password: '' })
     const [err, setErr] = useState('')
 
     const onChangeInput = e => {
         const { name, value } = e.target;
         setUser({ ...user, [name]: value })
-        // setErr('')
+        setErr('')
     }
   
     const registerSubmit = async e =>{
@@ -20,9 +21,9 @@ const LoginPage = ({setIsLogin}) => {
                 password: user.password
             })
             setUser({name: '', email: '', password: ''})
-            // setErr(res.data.msg)
+            setErr(res.data.msg)
             } catch (err) {
-            // err.response.data.msg && setErr(err.response.data.msg)
+            err.response.data.msg && setErr(err.response.data.msg)
           console.log('errrrrorrrr')
           }
     }
@@ -30,15 +31,12 @@ const LoginPage = ({setIsLogin}) => {
     const loginSubmit = async e =>{
         e.preventDefault()
         try {
-            const res = await axios.post('/users/login',{
-                email: user.email,
-                password: user.password
-            })
+            const res = await axios.post('/users/login',{email: user.email, password: user.password})
             setUser({name: '', email: '', password: ''})
             localStorage.setItem('tokenStore', res.data.token)
             setIsLogin(true)
         } catch (err) {
-            // err.response.data.msg && setErr(err.response.data.msg)
+            err.response.data.msg && setErr(err.response.data.msg)
             console.log('errorr')
         }
     }
@@ -97,4 +95,4 @@ const LoginPage = ({setIsLogin}) => {
     )
 }
 
-export default LoginPage;
+export default Login;

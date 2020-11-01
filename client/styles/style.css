@@ -1,3 +1,45 @@
+* {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  font-family: sans-serif;
+  
+}
+
+
+a {
+  text-decoration: none;
+  color: #29a8ab;
+  padding-left: 115px;
+  font-size: 18px;
+  
+}
+p {
+  font-size: 22px;
+}
+
+input {
+  border-style: none;
+  border-radius: 7px;
+}
+textarea {
+  border-style: none;
+  border-radius: 7px;
+}
+
+button {
+  border-style: none;
+  border-radius: 7px !important;
+  background-color: #cccccc;
+  box-shadow: none !important;
+  margin-top: 5px;
+  
+}
+
+body {
+  background: #eeeeee;
+}
+
 .login-page {
 	position: relative;
 	width: 100%;
