@@ -1,0 +1,36 @@
+.login-page {
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+}
+.login input,
+.register input {
+	margin-bottom: 15px;
+}
+.login,
+.register {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #eeeeee;
+}
+.login-page h2,
+.login-page h3 {
+	color: #29a8ab;
+	padding-left: 90px;
+}
+.login-page h3 {
+	text-align: center;
+	text-transform: uppercase;
+	margin-top: 15px;
+}
+.login-page p {
+	margin: 10px 0;
+	color: #29a8ab;
+	margin-left: 80px;
+}
+.login-page span:hover {
+	color: #ff8b94;
+	cursor: pointer;
+}
