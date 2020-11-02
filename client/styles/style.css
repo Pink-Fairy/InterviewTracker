@@ -1,17 +1,51 @@
-* {
+*,
+*:before,
+*:after {
   margin: 0;
   padding: 0;
 }
 
 .grid-container {
-  /* height: 100vh;
-  width: 100vw; */
-  display: grid;
+  height: 100vh;
+  width: 100vw;
+  /* display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; */
   gap: 0px 0px;
 }
 
+.tasksList_Container {
+  border: 1px solid black;
+  width: 700px;
+  height: 900px;
+}
+
+.taskList_Header {
+  border: 1px solid black;
+  height: 50px;
+  text-align: center;
+}
+
+.taskListHolder {
+  border: 1px solid red;
+  height: 700px
+}
+
+.taskListButton {
+  border: 1px solid purple;
+  height: 100px;
+}
+
+.Individual_Task {
+  display: flex;
+}
+
+.task_item {
+  color: black;
+  /* find out how to do cross through when task completed... */
+}
+
+/* 
 .Menu {
   grid-area: 1 / 1 / 7 / 2;
   background-color: aqua;
@@ -25,13 +59,13 @@
 .Calendar {
   grid-area: 2 / 2 / 4 / 4;
   background-color: coral;
-}
+} */
 
 .Task {
-  grid-area: 2 / 4 / 4 / 6;
+  /* grid-area: 2 / 4 / 4 / 6; */
   background-color: red;
 }
-
+/* 
 .Job {
   grid-area: 4 / 2 / 7 / 6;
   background-color: pink;
@@ -40,7 +74,7 @@
 .AddJob {
   grid-area: 4 / 1 / 7 / 2;
   background-color: cornflowerblue;
-}
+} */
 /* 
 * {
   padding: 0;
