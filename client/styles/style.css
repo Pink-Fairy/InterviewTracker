@@ -13,9 +13,13 @@ table {
   border-radius: 7px !important;
 }
 
+a {
+  text-decoration: none;
+}
+
 .logout{
   font-size: 20px;
-  margin-left: 600px;
+  margin-left: 800px;
   
 }
 
@@ -24,7 +28,7 @@ table {
   width: 100vw; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; */
   gap: 8px 8px;
 }
 
@@ -34,12 +38,18 @@ table {
 }
 
 .Header {
-  grid-area: 1 / 2 / 2 / 6;
-  background-color: bisque;
+   grid-area: 1 / 2 / 2 / 6;
+    background-color: #37437F;
+    /* background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%); */
+    height: 77px;
+    margin: 10px;
+    border-radius: 7px;
+    padding-top: 35px;
 }
 
 .Calendar {
   grid-area: 2 / 2 / 4 / 4;
+  
   /* background-color: coral; */
 }
 
@@ -93,6 +103,9 @@ button {
 
 body {
   background: #272F60;
+}
+h1 {
+  font-weight: 500;
 }
 
 .login-page {
@@ -191,6 +204,7 @@ section {
 
 .MuiButton-outlinedSizeSmall {
 background-color: #fa476f !important;
+margin-left: 6px !important;
 }
 
 .MuiFormControl-root {
