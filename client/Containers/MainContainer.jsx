@@ -7,6 +7,7 @@ import JobForm from '../Components/JobForm.jsx';
 import Calendar from '../Components/Calendar.jsx';
 import Menu from '../Components/Menu.jsx';
 import UpdateJob from './UpdateJob.jsx';
+import TaskListHolder from '../Components/TaskListHolder.jsx';
 
 
 
@@ -20,7 +21,7 @@ export default function MainContainer({setIsLogin}) {
           <Header setIsLogin={setIsLogin} />
         <div className="Menu"><Menu/></div>
         <div className="Calendar"><Calendar /></div>
-        {/* <          "> T className="Job"ask   */}
+        <div className="Task"><TaskListHolder /></div>
         <div className="Job"><Job /></div> 
         <div className="AddJob"><JobForm /></div>
         </div>
@@ -29,7 +30,7 @@ export default function MainContainer({setIsLogin}) {
         </Switch>
       </Router>
     )
-  }
+  };
 
 
   // <Router>
