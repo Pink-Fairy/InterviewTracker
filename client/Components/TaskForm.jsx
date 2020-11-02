@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
+import TextField from '@material-ui/core/TextField';
 
 
 // this component will keep track of our task state through a form
@@ -8,21 +9,18 @@ const TaskForm = ({ addTask }) => {
 
   const [task, setTask] = useState({
     task: '', // text describing the task
-    date: '',
-    completed: false, // used to keep track of whether task has been completed
+    date: '', // text describing the task
     id: ''
   }); 
 
-  // this logs after task list holder
-  // console.log('taskslist form')
-  // console.log(task)
+
 
  // function that will handle task input change
  const handleTaskInputChange = (e) => {
    const { name, value } = e.target
    setTask({
      ...task,
-     [name]: value// will contain input from user 
+     [name]: value // using computed property names to update respective fields when user types in that input text
    });
  };
 
@@ -31,7 +29,6 @@ const TaskForm = ({ addTask }) => {
  const handleSubmit = (e) => {
    e.preventDefault(); // prevent deault browser form functionality
    // gets called if task is not empty by calling trim function that will remove white spaces
-
    if (task.task.trim()) {
      addTask({
        ...task
@@ -56,20 +53,25 @@ const TaskForm = ({ addTask }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input 
+      <TextField 
+      variant="outlined"
+      margin="normal"
       name='task'
       value={task.task}
       placeholder='Task'
       required
       onChange={handleTaskInputChange}
       />
-      <input 
+     
+     <TextField 
+      variant="outlined"
+      margin="normal"
       name='date'
       value={task.date}
       placeholder='Date'
       onChange={handleTaskInputChange}
-      />
-      <button type='submit'>Submit</button>
+     />
+      <button type='submit' />
     </form>
   );
 }

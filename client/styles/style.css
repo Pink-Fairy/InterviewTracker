@@ -14,35 +14,9 @@
   gap: 0px 0px;
 }
 
-.tasksList_Container {
-  border: 1px solid black;
-  width: 700px;
-  height: 900px;
-}
-
-.taskList_Header {
-  border: 1px solid black;
-  height: 50px;
+.tasks_container {
+  font-family: sans-serif;
   text-align: center;
-}
-
-.taskListHolder {
-  border: 1px solid red;
-  height: 700px
-}
-
-.taskListButton {
-  border: 1px solid purple;
-  height: 100px;
-}
-
-.Individual_Task {
-  display: flex;
-}
-
-.task_item {
-  color: black;
-  /* find out how to do cross through when task completed... */
 }
 
 /* 

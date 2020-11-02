@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import{ useHistory } from 'react-router-dom';
+// import axios from 'axios';
+// import{ useHistory } from 'react-router-dom';
+import Typography from '@material-ui/core/Typography';
+// import useTodoState from './useTodoState';
 
 import TasksList from './TasksList.jsx';
 import TaskForm from './TaskForm.jsx';
@@ -15,43 +17,35 @@ import TaskForm from './TaskForm.jsx';
 const TaskListHolder = () => {
   const [tasks, setTasks] = useState([]);
 
-
-  const history = useHistory(); 
-
-  
-
-  useEffect(() => {
-    const getTasks = async () => {
-      const token = localStorage.getItem('tokenStore')
-      if(match.params.id) {
-
-      }
-    }
-    getTasks();
-  }, [])
-
-  // take in a task and add it to task array
   const addTask = (task) => {
+    setTasks(
+      [task, ...tasks]
+    );
+  };
 
-    setTasks([task, ...tasks]);
+  const deleteTask = (taskIndex) => {
+    const newTasks = tasks.filter((_, index) => index !== taskIndex);
+    setTasks(
+      newTasks
+    );
   };
 
 
-
-
   return (
-    <div className="tasksList_Container">
-      <div className="taskList_Header">
-        Task
-      </div>
-      <div className="taskListHolder">
-        <TasksList tasks={tasks} />
-      </div>
-      <div className="taskListButton">
-        <TaskForm addTask={addTask} />
-      </div>
+    <div className="tasks_container">
+      <Typography component="h1" variant="h2">
+        Todos
+      </Typography>
+
+      <TaskForm 
+      addTask={addTask} 
+      />
+      <TasksList 
+      tasks={tasks} 
+      deleteTask={deleteTask}
+      />
     </div>
-  );
+  )
 }
 
 export default TaskListHolder;
