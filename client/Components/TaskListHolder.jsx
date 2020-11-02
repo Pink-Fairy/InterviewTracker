@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import{ useHistory } from 'react-router-dom';
+
 import TasksList from './TasksList.jsx';
 import TaskForm from './TaskForm.jsx';
 
@@ -12,10 +15,24 @@ import TaskForm from './TaskForm.jsx';
 const TaskListHolder = () => {
   const [tasks, setTasks] = useState([]);
 
+
+  const history = useHistory(); 
+
   
+
+  useEffect(() => {
+    const getTasks = async () => {
+      const token = localStorage.getItem('tokenStore')
+      if(match.params.id) {
+
+      }
+    }
+    getTasks();
+  }, [])
 
   // take in a task and add it to task array
   const addTask = (task) => {
+
     setTasks([task, ...tasks]);
   };
 

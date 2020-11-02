@@ -6,6 +6,10 @@ import Task from './Task.jsx';
 
 const TasksList = ({ tasks }) => {
 
+  // console.log('taskslist')
+  // console.log(tasks)
+
+  
   return (
     <div>
       <ul>

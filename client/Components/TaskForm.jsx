@@ -9,8 +9,13 @@ const TaskForm = ({ addTask }) => {
   const [task, setTask] = useState({
     task: '', // text describing the task
     date: '',
-    completed: false // used to keep track of whether task has been completed
+    completed: false, // used to keep track of whether task has been completed
+    id: ''
   }); 
+
+  // this logs after task list holder
+  // console.log('taskslist form')
+  // console.log(task)
 
  // function that will handle task input change
  const handleTaskInputChange = (e) => {

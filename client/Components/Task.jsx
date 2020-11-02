@@ -8,6 +8,9 @@ import React from 'react';
 
 const Task = ({ task }) => {
 
+  // console.log('tasks')
+  // console.log(task)
+
   return (
     <div className="Individual_Task">
       <input type="checkbox" />
