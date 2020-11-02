@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import regeneratorRuntime from 'regenerator-runtime';
+import JobForm from '../Components/JobForm.jsx';
 
 export default class MainContainer extends Component {
   render() {
@@ -10,7 +11,8 @@ export default class MainContainer extends Component {
         <div className="Calendar">Calendar</div>
         <div className="Task"> Task</div>
         <div className="Job">Job</div>
-        <div className="AddJob">AddJob</div>
+        <JobForm className="AddJob"/>
+        {/* <div className="AddJob">AddJob</div> */}
       </div>
     );
   }
