@@ -10,24 +10,29 @@ import EditIcon from '@material-ui/icons/Edit';
 
 
 
-const TasksList = ({tasks, deleteTask }) => {
+const TasksList = ({tasks, deleteTask, updateTask }) => {
   return(
 <List>
-    {tasks.map((task, index) => (
-      <ListItem key={index.toString()} dense button>
+    {tasks.map((task) => (
+      <ListItem key={task._id} dense button>
         <Checkbox tabIndex={-1} disableRipple />
-        <ListItemText primary={task.task} />
-        <ListItemText primary={task.date} />
+        <ListItemText primary={task.title} />
+        <ListItemText primary={new Date(task.date).toLocaleDateString()} />
         <ListItemSecondaryAction>
           <IconButton
             aria-label="Delete"
             onClick={() => {
-              deleteTask(index);
+              deleteTask(task._id);
             }}
           >
             <DeleteIcon />
           </IconButton>
-          <IconButton> 
+          <IconButton
+            aria-label="Update"
+            onClick={() => {
+              updateTask(task);
+            }}
+          > 
             <EditIcon />
           </IconButton>
         </ListItemSecondaryAction>
