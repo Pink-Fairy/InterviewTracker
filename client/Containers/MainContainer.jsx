@@ -6,6 +6,7 @@ import Job from '../Components/Job.jsx';
 import JobForm from '../Components/JobForm.jsx';
 
 
+
 export default function MainContainer({setIsLogin}) {
   
     return (
@@ -13,9 +14,8 @@ export default function MainContainer({setIsLogin}) {
         <div className="grid-container">
           <Header setIsLogin={setIsLogin} />
         <div className="Menu">Menu</div>
-        <div className="Calendar">Calendar</div>
-          <div className="Task"> Task</div>
-          
+        <div className="Calendar"></div>
+        {/* <          "> T className="Job"ask   */}
         <div className="Job"><Job /></div> 
         <div className="AddJob"><JobForm /></div>
         </div>

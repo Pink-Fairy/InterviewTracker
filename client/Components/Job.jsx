@@ -13,12 +13,13 @@ import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles({
   table: {
-    minWidth: 650,
+    minWidth: 650
   },
 });
 
 
 export default function Job() {
+
     const [jobs, setJobs] = useState([]);
     const [token, setToken] = useState('');
 
@@ -34,7 +35,7 @@ export default function Job() {
         if (token) {
             getJobs(token);
         }
-    }, []);
+    }, [jobs]);
 
     const classes = useStyles();
 

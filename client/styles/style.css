@@ -1,6 +1,11 @@
 * {
-  font-family: Montserrat, sans-serif;
+  font-family: Montserrat, sans-serif !important;
 }
+
+html {
+  color: #939AB6  !important;
+}
+
 .logout{
   font-size: 20px;
   margin-left: 600px;
@@ -138,3 +143,20 @@ section {
   color: #ff8b94;
   cursor: pointer;
 }
+.makeStyles-table-1 {
+  background-color: #2A3465;
+  color: #939AB6;
+}
+.MuiTableCell-head {
+  color: #939AB6  !important;
+  text-align: center !important;
+}
+
+.MuiTableCell-alignRight {
+  text-align: center;
+}
+
+.MuiTableCell-body{
+  color: #939AB6 ;
+}
+
