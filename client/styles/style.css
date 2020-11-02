@@ -167,8 +167,9 @@ section {
   text-transform: uppercase;
   font-weight: 900;
   letter-spacing: 2px;
-  color: whitesmoke;
-  background-color: #5E44E5;
+  color: black !important;
+  /* background-color: #5E44E5; */
+  background:linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
 }
  span:hover {
   color: #ff8b94;
