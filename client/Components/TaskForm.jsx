@@ -40,7 +40,9 @@ const TaskForm = ({getTask}) => {
 
       const { title, date } = task;
       const newTask = { title, date };
-
+   if (e.key === 'Enter') {
+        console.log('TEEEESTT!')
+      }
       axios.post('/api/tasks', newTask, {
         headers: {Authorization: token}
       })
@@ -85,14 +87,8 @@ const TaskForm = ({getTask}) => {
 //    } 
 //  }
 
-
-
-
-
-
-
   return (
-    <form onSubmit={taskForm}>
+    <form onSubmit={taskForm} className="task-form">
       <TextField 
       variant="outlined"
       margin="normal"
@@ -111,7 +107,7 @@ const TaskForm = ({getTask}) => {
       placeholder='Date'
       onChange={handleTaskInputChange}
      />
-      <button type='submit' />
+      <button type='submit' className="button-task"/>
     </form>
   );
 }
