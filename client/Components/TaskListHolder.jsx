@@ -22,29 +22,33 @@ const TaskListHolder = () => {
   const [tasks, setTasks] = useState([]);
   const [token, setToken] = useState('');
 
-  // const addTask = (task) => {
-  //   setTasks(
-  //     [task, ...tasks]
-  //   );
-  // };
 
-
+  const getTask = async(token) => {
+    const response = await axios.get('/api/tasks', {
+      headers: {Authorization: token}
+    })
+    setTasks(response.data);
+  };
    
 
     useEffect(() => {
       const token = localStorage.getItem('tokenStore');
       setToken(token);
-      axios.get('/api/tasks', {
-        headers: {Authorization: token}
-      })   
-      .then(res => { 
-        console.log(res.data);
-        setTasks(res.data);
-      })
-      .catch(err => {
-        console.log(err);
-      })
-    }, []);
+      // axios.get('/api/tasks', {
+      //   headers: {Authorization: token}
+      // })   
+      // .then(res => { 
+      //   console.log(res.data);
+      //   setTasks(res.data);
+      // })
+      // .catch(err => {
+      //   console.log(err);
+      // })
+      if (token) {
+        getTask(token)
+      }
+      
+    }, [tasks]);
   
 
 
@@ -59,7 +63,7 @@ const TaskListHolder = () => {
       headers: {Authorization: token}
     })
     .then(res => {
-      // console.log(res);
+      console.log(res);
       const newTasks = tasks.filter((task) => task._id !== taskMongoID);
       setTasks(
         newTasks
@@ -95,7 +99,7 @@ const TaskListHolder = () => {
         Tasks
       </Typography>
 
-      <TaskForm />
+      <TaskForm getTask={getTask}/>
       <TasksList 
       tasks={tasks} 
       deleteTask={deleteTask}

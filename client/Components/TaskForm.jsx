@@ -7,7 +7,7 @@ import axios from 'axios';
 
 // this component will keep track of our task state through a form
 
-const TaskForm = () => {
+const TaskForm = ({getTask}) => {
   // define state to keep track of input from user
 
   const [task, setTask] = useState({
@@ -46,6 +46,11 @@ const TaskForm = () => {
       })
       .then(res => {
         console.log(res);
+        // addTask({
+        //   ...task
+        // });
+        getTask(token);
+
       })
       .catch(err => {
         console.log(err);
