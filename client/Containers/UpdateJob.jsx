@@ -84,6 +84,14 @@ const [job, setJob] = useState('')
   }
 }
 
+const handleDelete = (e, id) => {
+  e.stopPropagation()
+  fetch(`/api/job/${id}`, {
+    method:'DELETE'
+  }).then(data => console.log(data) )
+  .catch(err => console.log(err))
+}
+
 
     return (
       <form onSubmit={jobForm} >
@@ -186,6 +194,15 @@ const [job, setJob] = useState('')
           className={classes.margin}
             type="submit">
             SUBMIT
+          </Button>
+          <Button 
+          variant="outlined" 
+          size="small" 
+          color="primary" 
+          className={classes.margin}
+            type="submit"
+            onClick={(e) => handleDelete(e, el.id)}>
+            DELETE
           </Button>
           </FormControl>
       </form>
