@@ -1,31 +1,27 @@
 * {
-  font-family: Montserrat, sans-serif !important;
-  color: #939AB6 !important;  
-  border-color: #2D3468 !important;
-  
+	font-family: Montserrat, sans-serif !important;
+	color: #939ab6 !important;
+	border-color: #2d3468 !important;
 }
 
 html {
-  color: #939AB6  !important;
+	color: #939ab6 !important;
 }
 
 table {
-  border-radius: 7px !important;
+	border-radius: 7px !important;
 }
 
 a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
-.logout{
-  font-size: 20px;
-  margin-left: 800px;
-  
+.logout {
+	font-size: 20px;
+	margin-left: 800px;
+
 }
 
-.grid-container {
-  /* height: 100vh;
-  width: 100vw; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; */
@@ -54,8 +50,8 @@ a {
 }
 
 .Task {
-  grid-area: 2 / 4 / 4 / 6;
-  background-color: red;
+	grid-area: 2 / 4 / 4 / 6;
+	background-color: red;
 }
 
 .Job {
@@ -77,89 +73,95 @@ a {
   border-style: none;
   border-color: #565E85;
   box-shadow: 0px 0px 19px 0px rgba(93, 102, 155, 0.2);
+
 }
 
 p {
-  margin-left: 130px;
-  color: #565E85;
+	margin-left: 130px;
+	color: #565e85;
 }
 
 input {
-  border-style: none;
-  border-radius: 7px;
+	border-style: none;
+	border-radius: 7px;
 }
 textarea {
-  border-style: none;
-  border-radius: 7px;
+	border-style: none;
+	border-radius: 7px;
 }
 
 button {
+
   /* border-style: none; */
   border-radius: 7px !important;
   background-color: #cccccc;
   box-shadow: none !important;
   margin-top: 5px;
+
 }
 
 body {
-  background: #272F60;
+	background: #272f60;
+}
+h1 {
+	font-weight: 500;
 }
 h1 {
   font-weight: 500;
 }
 
 .login-page {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
 }
 .login input,
 .register input {
-  margin-bottom: 15px;
+	margin-bottom: 15px;
 }
 .login,
 .register {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #2A3465;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #2a3465;
 }
 
 .login-page h3 {
-  text-align: center;
-  text-transform: uppercase;
-  margin-top: 15px;
+	text-align: center;
+	text-transform: uppercase;
+	margin-top: 15px;
 }
 
 section {
-  width: 100%;
-  padding: 20px 0;
+	width: 100%;
+	padding: 20px 0;
 }
 
 .create-note {
-  max-width: 500px;
-  width: 100%;
-  margin: auto;
-  opacity: 7;
-  padding: 30px;
-  border-radius: 20px;
-  background: #2A3465;
-  box-shadow: 4px 3px 26px 0px rgba(50, 50, 50, 0.17);
+	max-width: 500px;
+	width: 100%;
+	margin: auto;
+	opacity: 7;
+	padding: 30px;
+	border-radius: 20px;
+	background: #2a3465;
+	box-shadow: 4px 3px 26px 0px rgba(50, 50, 50, 0.17);
 }
 .create-note h2 {
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin:10px 0;
-  margin-left: 200px;
-  color: #565E85
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	margin: 10px 0;
+	margin-left: 200px;
+	color: #565e85;
 }
 
 .create-note input,
 .create-note button {
-  width: 100%;
-  height: 40px;
-  padding: 0 5px;
+	width: 100%;
+	height: 40px;
+	padding: 0 5px;
 }
 
 .create-note button {
@@ -231,4 +233,3 @@ button.react-calendar__tile  {
     width: 200px !important;;
  
   }
-

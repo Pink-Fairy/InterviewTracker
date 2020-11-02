@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import regeneratorRuntime from 'regenerator-runtime';
 import axios from 'axios';
 import { makeStyles } from '@material-ui/core/styles';
@@ -20,11 +20,14 @@ const useStyles = makeStyles({
 
 export default function Job() {
 
+  const classes = useStyles();
+
     const [jobs, setJobs] = useState([]);
     const [token, setToken] = useState('');
+    let history = useHistory();
 
     const getJobs = async (token) => {
-        const res = await axios.get('api/jobs', {
+        const res = await axios.get('api/jobs', { 
             headers: {Authorization: token}
         })
         setJobs(res.data); 
@@ -37,7 +40,12 @@ export default function Job() {
         }
     }, [jobs]);
 
-    const classes = useStyles();
+
+
+    const handleSelectJob = (e, id) => {
+      e.stopPropagation()
+      history.push(`/update/${id}`)
+    }
 
   return (
     <TableContainer component={Paper}>
@@ -57,7 +65,8 @@ export default function Job() {
         </TableHead>
         <TableBody>
           {jobs.map((job) => (
-            <TableRow key={job._id}>
+            <TableRow key={job._id} onClick={(e)=> handleSelectJob(e, job._id)}>
+            {/* <TableRow key={job._id} onClick={(e)=> handleSelectJob(e, job._id)}> */}
               <TableCell component="th" scope="row">
                 {job.name}
               </TableCell>
