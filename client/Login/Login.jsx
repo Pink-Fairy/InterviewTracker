@@ -50,8 +50,8 @@ const Login = ({ setIsLogin }) => {
     opacity: onLogin ? 1 : 0,
   };
 
-  return (
-    <section className="login-page">
+    return (
+    <div className="container">
       <div className="login create-note">
         <h2>LOGIN</h2>
         <form onSubmit={loginSubmit}>
@@ -77,7 +77,7 @@ const Login = ({ setIsLogin }) => {
           />
 
           <button type="submit">Login</button>
-          {/* <LoginGoogle /> */}
+         
           <p>
             Don't Have an Account?
             <span onClick={() => setOnLogin(true)}> Sign Up</span>
@@ -127,8 +127,9 @@ const Login = ({ setIsLogin }) => {
           <h3>{err}</h3>
         </form>
       </div>
-    </section>
+    </div>
   );
 };
+
 
 export default Login;

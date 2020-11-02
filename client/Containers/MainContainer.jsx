@@ -1,19 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
 import regeneratorRuntime from 'regenerator-runtime';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Header from '../Components/Header.jsx';
+import Job from '../Components/Job.jsx';
 import JobForm from '../Components/JobForm.jsx';
 
-export default class MainContainer extends Component {
-  render() {
+
+export default function MainContainer({setIsLogin}) {
+  
     return (
-      <div className="grid-container">
+      <Router>
+        <div className="grid-container">
+          <Header setIsLogin={setIsLogin} />
         <div className="Menu">Menu</div>
-        <div className="Header">Header</div>
         <div className="Calendar">Calendar</div>
-        <div className="Task"> Task</div>
-        <div className="Job">Job</div>
-        <JobForm className="AddJob"/>
-        {/* <div className="AddJob">AddJob</div> */}
-      </div>
-    );
+          <div className="Task"> Task</div>
+          
+        <div className="Job"><Job /></div> 
+        <div className="AddJob"><JobForm /></div>
+        </div>
+      </Router>
+    )
   }
-}
+
