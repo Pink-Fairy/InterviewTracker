@@ -19,6 +19,7 @@ const useStyles = makeStyles({
 
 
 export default function Job() {
+  const classes = useStyles();
     const [jobs, setJobs] = useState([]);
     const [token, setToken] = useState('');
     let history = useHistory();

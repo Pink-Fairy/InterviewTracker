@@ -35,74 +35,62 @@ const [job, setJob] = useState('')
     setJob(res.data); 
   }
 
+
   useEffect(() => {
-    const getJobId = async () =>{
-      const token = localStorage.getItem('tokenStore');
-      if(match.params.id){
-        const res = await axios.get(`/api/jobs/${match.params.id}`, {
-          headers: {Authorization: token}
-        })
-        setJob({
-        name: res.data.name, 
-        company: res.data.company, 
-        email: res.data.email, 
-        phone: res.data.phone, 
-        position: res.data.position,
-        submitted: res.data.submitted, 
-        application: res.data.application, 
-        interview: res.data.interview,
-        offer: res.data.offer, 
-        id: res.data._id
-        }) 
-    } 
-  }
-  getJobId();
-} , [match.params.id]);
-  
-  
-  const onChangeInput = e => {
-    const { name, value } = e.target;
-    setJob({ ...job, [name]: value })
+    const token = localStorage.getItem('tokenStore');
+    setToken(token);
+    if (token) {
+        getJobs(token);
+    }
+}, []);
+
+const onChangeInput = e => {
+  const { name, value } = e.target;
+  setJob({ ...job, [name]: value })
 };
 
-  const jobForm = async e => {
+const jobForm = async e => {
   e.preventDefault()
   try {
-      const token = localStorage.getItem('tokenStore')
-      if(token){
-        const { name, company, email, phone, position, submitted, application, interview, offer } = job;
+    const token = localStorage.getItem('tokenStore')
+    if(token){
+      const { name, company, email, phone, position, submitted, application, interview, offer } = job;
 
         const newJob = { name, company, email, phone, position, submitted, application, interview, offer};
           await axios.put(`/api/jobs/${id}`, newJob, {
               headers: {Authorization: token}
-          })
+            })
           
           return history.push('/')
-      }
-  } catch (err) {
+        }
+      } catch (err) {
       window.location.href = "/";
+    }
   }
-}
+  
+  const handleDelete = async e => {
+    e.preventDefault()
+ try {
+  const deleted = axios.delete(`/api/jobs/${id}`, {
+    headers: {Authorization: token}
+  })
+  return history.push('/')
+ } catch (error) {
+  window.location.href = "/";
+ }
+  }
 
-const handleDelete = (e, id) => {
-  e.stopPropagation()
-  fetch(`/api/job/${id}`, {
-    method:'DELETE'
-  }).then(data => console.log(data) )
-  .catch(err => console.log(err))
-}
 
-
-    return (
-      <form onSubmit={jobForm} >
+return (
+  <form onSubmit={jobForm} >
         <FormControl component="fieldset" >
         <div>
           <TextField
-            id="outlined-uncontrolled"
+            id="outlined"
             label="Name"
-              size="small"
-              type="text"
-              name="name"
+            size="small"
+            type="text"
+            name="name"
             value={job.name}
             onChange={onChangeInput}
             variant="outlined"
@@ -110,78 +98,78 @@ const handleDelete = (e, id) => {
           <TextField
             id="outlined-uncontrolled"
             label="Company"
-              size="small"
-              type="text"
+            size="small"
+            type="text"
             name="company"
             value={job.company}
             onChange={onChangeInput}
             variant="outlined"
-          />
+            />
           <TextField
             id="outlined-uncontrolled"
-              label="Email"
-              type="text"
+            label="Email"
+            type="text"
             size="small"
-              name="email"
+            name="email"
             value={job.email}
             onChange={onChangeInput}
             variant="outlined"
-          />
+            />
           <TextField
             id="outlined-uncontrolled"
             label="Phone"
-              size="small"
-              type="text"
+            size="small"
+            type="text"
             name="phone"
             value={job.phone}
             onChange={onChangeInput}
             variant="outlined"
-          />
+            />
           <TextField
             id="outlined-uncontrolled"
             label="Position"
             size="small"
-              name="position"
+            name="position"
             value={job.position}
             onChange={onChangeInput}
             variant="outlined"
-          />
+            />
           <TextField
             id="outlined-uncontrolled"
             label="Submitted"
-              size="small"
-              type="text"
-              name="submitted"
+            size="small"
+            type="text"
+            name="submitted"
             value={job.submitted}
             onChange={onChangeInput}
             variant="outlined"
-          />
+            />
           <TextField
             id="outlined-uncontrolled"
             label="Application"
-              size="small"
+            size="small"
               type="text"
               name="application"
-            value={job.application}
-            onChange={onChangeInput}
-            variant="outlined"
-          />
+              value={job.application}
+              onChange={onChangeInput}
+              variant="outlined"
+              />
           <TextField
             id="outlined-uncontrolled"
             label="Interview"
-              size="small"
-              type="text"
+            size="small"
+            type="text"
               name="interview"
-            value={job.interview}
-            onChange={onChangeInput}
-            variant="outlined"
-          />
+              value={job.interview}
+              onChange={onChangeInput}
+              variant="outlined"
+              />
           <TextField
             id="outlined-uncontrolled"
-              label="Offer"
-              type="text"
+            label="Offer"
+            type="text"
             size="small"
-              name="offer"
+            name="offer"
             value={job.offer}
             onChange={onChangeInput}
             variant="outlined"
@@ -192,7 +180,7 @@ const handleDelete = (e, id) => {
           size="small" 
           color="primary" 
           className={classes.margin}
-            type="submit">
+          type="submit">
             SUBMIT
           </Button>
           <Button 
@@ -201,7 +189,7 @@ const handleDelete = (e, id) => {
           color="primary" 
           className={classes.margin}
             type="submit"
-            onClick={(e) => handleDelete(e, el.id)}>
+            onClick={handleDelete}>
             DELETE
           </Button>
           </FormControl>
@@ -211,3 +199,28 @@ const handleDelete = (e, id) => {
 
 export default UpdateJob
 
+
+//   useEffect(() => {
+//     const getJobId = async () =>{
+//       const token = localStorage.getItem('tokenStore');
+//       if(match.params.id){
+//         const res = await axios.get(`/api/jobs/${match.params.id}`, {
+//           headers: {Authorization: token}
+//         })
+//         setJob({
+//         name: res.data.name, 
+//         company: res.data.company, 
+//         email: res.data.email, 
+//         phone: res.data.phone, 
+//         position: res.data.position,
+//         submitted: res.data.submitted, 
+//         application: res.data.application, 
+//         interview: res.data.interview,
+//         offer: res.data.offer, 
+//         id: res.data._id
+//         }) 
+//     } 
+//   }
+//   getJobId();
+// } , [match.params.id]);
+  
