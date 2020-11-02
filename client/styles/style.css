@@ -1,9 +1,16 @@
 * {
   font-family: Montserrat, sans-serif !important;
+  color: #939AB6  !important;
+  border-color: #2D3468 !important;
+  
 }
 
 html {
   color: #939AB6  !important;
+}
+
+table {
+  border-radius: 7px !important;
 }
 
 .logout{
@@ -18,12 +25,12 @@ html {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 0px 0px;
+  gap: 8px 8px;
 }
 
 .Menu {
-  grid-area: 1 / 1 / 7 / 2;
-  background-color: aqua;
+  padding-top: 50px;
+  padding-left: 25px;
 }
 
 .Header {
@@ -33,7 +40,7 @@ html {
 
 .Calendar {
   grid-area: 2 / 2 / 4 / 4;
-  background-color: coral;
+  /* background-color: coral; */
 }
 
 .Task {
@@ -43,12 +50,23 @@ html {
 
 .Job {
   grid-area: 4 / 2 / 7 / 6;
-  background-color: pink;
+  background-color: #37437F;
+  margin: 5px;
+  box-sizing: border-box;
+  border-radius: 10px !important;
+  border-style: none;
+  border-color: #565E85;
+  box-shadow: 0px 0px 19px 0px rgba(93, 102, 155, 0.2);
 }
-
 .AddJob {
   grid-area: 4 / 1 / 7 / 2;
-  background-color: cornflowerblue;
+  background-color: #37437F;
+  margin: 5px;
+  box-sizing: border-box;
+  border-radius: 10px !important;
+  border-style: none;
+  border-color: #565E85;
+  box-shadow: 0px 0px 19px 0px rgba(93, 102, 155, 0.2);
 }
 
 p {
@@ -66,7 +84,7 @@ textarea {
 }
 
 button {
-  border-style: none;
+  /* border-style: none; */
   border-radius: 7px !important;
   background-color: #cccccc;
   box-shadow: none !important;
@@ -144,19 +162,67 @@ section {
   cursor: pointer;
 }
 .makeStyles-table-1 {
-  background-color: #2A3465;
+  background-color: #37437F !important;
+  color: #939AB6;
+}
+
+.makeStyles-table-2 {
+  background-color: #37437F !important;
   color: #939AB6;
 }
 .MuiTableCell-head {
   color: #939AB6  !important;
   text-align: center !important;
+  font-weight: 700 !important;
 }
 
 .MuiTableCell-alignRight {
-  text-align: center;
+  text-align: center !important;
+}
+
+.MuiTableCell-root {
+  text-align: center !important;
+  padding: 17px !important;
 }
 
 .MuiTableCell-body{
-  color: #939AB6 ;
+  color: #939AB6 !important;
 }
+
+.MuiButton-outlinedSizeSmall {
+background-color: #fa476f !important;
+}
+
+.MuiFormControl-root {
+  margin: 0 auto !important; 
+}
+
+.MuiOutlinedInput-input {
+    padding: 18.5px 70px !important;
+}
+
+button.react-calendar__tile  {
+  height: 50px !important;
+  background-color: #37437F;
+}
+
+.MuiPaper-root {
+  background-color: #2A3465 !important;
+}
+
+/* .link-btn {
+    
+    border: 0;
+    border-radius: 3;
+    box-shadow: '0 3px 5px 2px rgba(255, 105, 135, .3)';
+    color: 'white';
+    height: 48;
+    padding: '0 30px';
+  } */
+
+.MuiButtonBase-root {
+   height: 40px!important;
+    width: 200px !important;;
+ 
+  }
 
