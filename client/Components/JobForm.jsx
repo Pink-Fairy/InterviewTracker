@@ -26,7 +26,12 @@ const JobForm = () => {
   const [application, setApplication] = useState('');
   const [interview, setInterview] = useState('');
   const [offer, setOffer] = useState('');
-  
+  const [token, setToken] = useState('');
+
+  useEffect(() => {
+    const token = localStorage.getItem('tokenStore');
+    setToken(token);
+}, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -34,7 +39,8 @@ const JobForm = () => {
     fetch('/api/jobs', {
       method: 'POST', 
       headers: {
-        "Content-Type": "Application/JSON"
+        "Content-Type": "Application/JSON",
+        "Authorization": token
       },
       body: JSON.stringify({  
         name, 
