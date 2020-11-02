@@ -1,6 +1,6 @@
 * {
   font-family: Montserrat, sans-serif !important;
-  color: #939AB6  !important;
+  color: #939AB6 !important;  
   border-color: #2D3468 !important;
   
 }
@@ -217,22 +217,13 @@ margin-left: 6px !important;
 
 button.react-calendar__tile  {
   height: 50px !important;
-  background-color: #37437F;
+  background:linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%) !important;
+  
 }
 
 .MuiPaper-root {
   background-color: #2A3465 !important;
 }
-
-/* .link-btn {
-    
-    border: 0;
-    border-radius: 3;
-    box-shadow: '0 3px 5px 2px rgba(255, 105, 135, .3)';
-    color: 'white';
-    height: 48;
-    padding: '0 30px';
-  } */
 
 .MuiButtonBase-root {
    height: 40px!important;
