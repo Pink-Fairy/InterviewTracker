@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
@@ -11,6 +11,36 @@ import EditIcon from '@material-ui/icons/Edit';
 
 
 const TasksList = ({tasks, deleteTask, updateTask }) => {
+
+
+
+  const [isEditing, setIsEditing] = useState(false);
+  const [updatedTask, setUpdatedTask] = useState();
+
+
+  const updateTaskState = (e) => {
+    setUpdatedTask({
+      ...tasks,
+      title: e.target.value,
+      date: e.target.value
+    });
+
+
+  };
+
+  const updateAndReset = (input, e) => {
+    e.preventDefault();
+
+    
+    updateTask(input);
+    setIsEditing(false);
+  };
+
+
+
+
+
+
   return(
 <List>
     {tasks.map((task) => (
