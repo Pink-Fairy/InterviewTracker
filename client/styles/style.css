@@ -19,36 +19,34 @@ a {
 .logout {
 	font-size: 20px;
 	margin-left: 800px;
+
 }
 
-.grid-container {
-	/* height: 100vh;
-  width: 100vw; */
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-	/* grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; */
-	gap: 8px 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; */
+  gap: 8px 8px;
 }
 
 .Menu {
-	padding-top: 50px;
-	padding-left: 25px;
+  padding-top: 50px;
+  padding-left: 25px;
 }
 
 .Header {
-	grid-area: 1 / 2 / 2 / 6;
-	background-color: #37437f;
-	/* background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%); */
-	height: 77px;
-	margin: 10px;
-	border-radius: 7px;
-	padding-top: 35px;
+   grid-area: 1 / 2 / 2 / 6;
+    background-color: #37437F;
+    /* background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%); */
+    height: 77px;
+    margin: 10px;
+    border-radius: 7px;
+    padding-top: 35px;
 }
 
 .Calendar {
-	grid-area: 2 / 2 / 4 / 4;
-
-	/* background-color: coral; */
+  grid-area: 2 / 2 / 4 / 4;
+  
+  /* background-color: coral; */
 }
 
 .Task {
@@ -57,24 +55,25 @@ a {
 }
 
 .Job {
-	grid-area: 4 / 2 / 7 / 6;
-	background-color: #37437f;
-	margin: 5px;
-	box-sizing: border-box;
-	border-radius: 10px !important;
-	border-style: none;
-	border-color: #565e85;
-	box-shadow: 0px 0px 19px 0px rgba(93, 102, 155, 0.2);
+  grid-area: 4 / 2 / 7 / 6;
+  background-color: #37437F;
+  margin: 5px;
+  box-sizing: border-box;
+  border-radius: 10px !important;
+  border-style: none;
+  border-color: #565E85;
+  box-shadow: 0px 0px 19px 0px rgba(93, 102, 155, 0.2);
 }
 .AddJob {
-	grid-area: 4 / 1 / 7 / 2;
-	background-color: #37437f;
-	margin: 5px;
-	box-sizing: border-box;
-	border-radius: 10px !important;
-	border-style: none;
-	border-color: #565e85;
-	box-shadow: 0px 0px 19px 0px rgba(93, 102, 155, 0.2);
+  grid-area: 4 / 1 / 7 / 2;
+  background-color: #37437F;
+  margin: 5px;
+  box-sizing: border-box;
+  border-radius: 10px !important;
+  border-style: none;
+  border-color: #565E85;
+  box-shadow: 0px 0px 19px 0px rgba(93, 102, 155, 0.2);
+
 }
 
 p {
@@ -92,11 +91,13 @@ textarea {
 }
 
 button {
-	/* border-style: none; */
-	border-radius: 7px !important;
-	background-color: #cccccc;
-	box-shadow: none !important;
-	margin-top: 5px;
+
+  /* border-style: none; */
+  border-radius: 7px !important;
+  background-color: #cccccc;
+  box-shadow: none !important;
+  margin-top: 5px;
+
 }
 
 body {
@@ -104,6 +105,9 @@ body {
 }
 h1 {
 	font-weight: 500;
+}
+h1 {
+  font-weight: 500;
 }
 
 .login-page {
@@ -161,78 +165,71 @@ section {
 }
 
 .create-note button {
-	cursor: pointer;
-	text-transform: uppercase;
-	font-weight: 900;
-	letter-spacing: 2px;
-	color: whitesmoke;
-	background-color: #5e44e5;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: black !important;
+  /* background-color: #5E44E5; */
+  background:linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
 }
-span:hover {
-	color: #ff8b94;
-	cursor: pointer;
+ span:hover {
+  color: #ff8b94;
+  cursor: pointer;
 }
 .makeStyles-table-1 {
-	background-color: #37437f !important;
-	color: #939ab6;
+  background-color: #37437F !important;
+  color: #939AB6;
 }
 
 .makeStyles-table-2 {
-	background-color: #37437f !important;
-	color: #939ab6;
+  background-color: #37437F !important;
+  color: #939AB6;
 }
 .MuiTableCell-head {
-	color: #939ab6 !important;
-	text-align: center !important;
-	font-weight: 700 !important;
+  color: #939AB6  !important;
+  text-align: center !important;
+  font-weight: 700 !important;
 }
 
 .MuiTableCell-alignRight {
-	text-align: center !important;
+  text-align: center !important;
 }
 
 .MuiTableCell-root {
-	text-align: center !important;
-	padding: 17px !important;
+  text-align: center !important;
+  padding: 17px !important;
 }
 
-.MuiTableCell-body {
-	color: #939ab6 !important;
+.MuiTableCell-body{
+  color: #939AB6 !important;
 }
 
 .MuiButton-outlinedSizeSmall {
-	background-color: #fa476f !important;
-	margin-left: 6px !important;
+background-color: #fa476f !important;
+margin-left: 6px !important;
 }
 
 .MuiFormControl-root {
-	margin: 0 auto !important;
+  margin: 0 auto !important; 
 }
 
 .MuiOutlinedInput-input {
-	padding: 18.5px 70px !important;
+    padding: 18.5px 70px !important;
 }
 
-button.react-calendar__tile {
-	height: 50px !important;
-	background-color: #37437f;
+button.react-calendar__tile  {
+  height: 50px !important;
+  background:linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%) !important;
+  
 }
 
 .MuiPaper-root {
-	background-color: #2a3465 !important;
+  background-color: #2A3465 !important;
 }
-
-/* .link-btn {
-    
-    border: 0;
-    border-radius: 3;
-    box-shadow: '0 3px 5px 2px rgba(255, 105, 135, .3)';
-    color: 'white';
-    height: 48;
-    padding: '0 30px';
-  } */
 
 .MuiButtonBase-root {
-	height: 40px !important;
-	width: 200px !important;
-}
+   height: 40px!important;
+    width: 200px !important;;
+ 
+  }
