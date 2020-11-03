@@ -3,9 +3,12 @@ import regeneratorRuntime from 'regenerator-runtime';
 import axios from 'axios';
 
 const Login = ({ setIsLogin }) => {
+  //setting up useStates for creating new user
+  //setting up for errors are optional and can be deleted
   const [user, setUser] = useState({ name: '', email: '', password: '' });
   const [err, setErr] = useState('');
 
+  //tracking key/value pairs by accessing value (check out the function return with the elements you'll see "value")
   const onChangeInput = (e) => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
@@ -15,6 +18,7 @@ const Login = ({ setIsLogin }) => {
   const registerSubmit = async (e) => {
     e.preventDefault();
     try {
+      //post request for creating a new user
       const res = await axios.post('/users/register', {
         username: user.name,
         email: user.email,
@@ -31,11 +35,13 @@ const Login = ({ setIsLogin }) => {
   const loginSubmit = async (e) => {
     e.preventDefault();
     try {
+      //post request for login
       const res = await axios.post('/users/login', {
         email: user.email,
         password: user.password,
       });
       setUser({ name: '', email: '', password: '' });
+      //checking if token exists in localStorage
       localStorage.setItem('tokenStore', res.data.token);
       setIsLogin(true);
     } catch (err) {
@@ -43,7 +49,8 @@ const Login = ({ setIsLogin }) => {
       console.log('errorr');
     }
   };
-
+  
+  //styling to make login/signup pages visible
   const [onLogin, setOnLogin] = useState(false);
   const style = {
     visibility: onLogin ? 'visible' : 'hidden',

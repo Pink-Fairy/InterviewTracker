@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import FormControl from '@material-ui/core/FormControl';
 
-
+//for UI design: https://material-ui.com/getting-started/usage/
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,7 +34,8 @@ export default function JobForm ()  {
         interview: "",
         offer: ""
   });
-   const history = useHistory();
+
+  const history = useHistory();
 
   const onChangeInput = e => {
         const { name, value } = e.target;
@@ -47,7 +48,7 @@ export default function JobForm ()  {
             const token = localStorage.getItem('tokenStore')
             if(token){
               const { name, company, email, phone, position, submitted, application, interview, offer } = job;
-
+              // set a variable to object to sent with post request 
               const newJob = { name, company, email, phone, position, submitted, application, interview, offer};
 
                 await axios.post('/api/jobs', newJob, {
@@ -65,7 +66,6 @@ export default function JobForm ()  {
                   interview: "",
                   offer: ""
             });
-
                 return history.push('/')
             }
         } catch (err) {
@@ -75,7 +75,7 @@ export default function JobForm ()  {
 
 
 
-   
+
   return (
     <form onSubmit={jobForm} >
       <FormControl component="fieldset" >

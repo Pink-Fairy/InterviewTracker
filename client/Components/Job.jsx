@@ -11,6 +11,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
+//for UI design: https://material-ui.com/getting-started/usage/
+
 const useStyles = makeStyles({
   table: {
     minWidth: 650
@@ -66,7 +68,6 @@ export default function Job() {
         <TableBody>
           {jobs.map((job) => (
             <TableRow key={job._id} onClick={(e)=> handleSelectJob(e, job._id)}>
-            {/* <TableRow key={job._id} onClick={(e)=> handleSelectJob(e, job._id)}> */}
               <TableCell component="th" scope="row">
                 {job.name}
               </TableCell>
