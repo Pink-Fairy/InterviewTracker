@@ -1,10 +1,11 @@
 const express = require('express');
-const dotenv = require('dotenv'); // .config(); // has our config/variables
+// global variables, PORT and  Mongo_URI stored in config.env file
+const dotenv = require('dotenv');
 const path = require('path');
-// const bodyParser = require('body-parser'); // replace by the express.json()
 const cors = require('cors');
 const mongoose = require('mongoose');
-// requiring routers
+
+/*----requiring routers----*/
 const userRouter = require('./routers/userRouter');
 const tasksRouter = require('./routers/tasksRouter');
 const jobListRouter = require('./routers/jobListRouter');
@@ -14,8 +15,7 @@ app.use(express.json());
 app.use(cors());
 app.use(express.static('build'));
 
-// to load config file
-// where we place our global variables, port also goes here. can also store Mongo_URI
+//load config file
 dotenv.config({ path: './config/config.env' });
 
 const PORT = process.env.PORT || 5000;
@@ -25,6 +25,7 @@ app.use('/users', userRouter);
 app.use('/api/tasks', tasksRouter);
 app.use('/api/jobs', jobListRouter);
 
+//connect to MongoDB
 const connectDB = async () => {
 	try {
 		const conn = await mongoose.connect(process.env.MONGO_URI, {
@@ -40,9 +41,10 @@ const connectDB = async () => {
 	}
 };
 
-// connect to mongo Database
+// connecting to MongoDB Database
 connectDB();
 
+//respond with main app
 app.get('/', (req, res) => {
 	res.sendFile(path.resolve(__dirname, '../client/index.html'));
 });
@@ -50,7 +52,7 @@ app.get('/', (req, res) => {
 // catch-all route handler for any requests to an unknown route
 app.use((req, res) => res.sendStatus(404));
 
-// global error
+// global error handler
 app.use((err, req, res, next) => {
 	const defaultErr = {
 		log: 'Express error handler caught unknown middleware error',
@@ -62,8 +64,7 @@ app.use((err, req, res, next) => {
 	return res.status(errorObj.status).json(errorObj.message);
 });
 
-// whenever we use process.env we can use variables in that config. if not there then we use port 5000
-
+//start server
 app.listen(PORT, (err) => {
 	if (err) return console.log(err);
 	console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);

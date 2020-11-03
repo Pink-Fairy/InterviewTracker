@@ -1,6 +1,7 @@
 const JobList = require('../models/jobListmodel');
 
 const jobListController = {
+	//get all the job
 	getAlljobs: async (req, res) => {
 		try {
 			const jobs = await JobList.find({ user_id: req.user.id });
@@ -10,6 +11,7 @@ const jobListController = {
 		}
 	},
 
+	//create one job
 	createOneJob: async (req, res) => {
 		try {
 			const {
@@ -42,6 +44,7 @@ const jobListController = {
 		}
 	},
 
+	//delete one job
 	deleteJob: async (req, res) => {
 		try {
 			await JobList.findByIdAndDelete(req.params.id);
@@ -51,6 +54,7 @@ const jobListController = {
 		}
 	},
 
+	//update one job
 	updateJob: async (req, res) => {
 		try {
 			const {
@@ -84,6 +88,7 @@ const jobListController = {
 		}
 	},
 
+	//select one job
 	getOneJob: async (req, res) => {
 		try {
 			const job = await JobList.findById(req.params.id);

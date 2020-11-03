@@ -8,7 +8,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Typography from '@material-ui/core/Typography';
 
 
-
+//styling for the UpdateJob Component
 const useStyles = makeStyles((theme) => ({
   root: {
     '& .MuiTextField-root': {
@@ -17,19 +17,18 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: 500
     },
   },
-
 }));
 
 const UpdateJob = () => {
   const history = useHistory();
   const classes = useStyles();
 
-  const { id }=  useParams();
+  const { id } =  useParams();
   const [token, setToken] = useState('');
-
   const [job, setJob] = useState('')
 
   
+  //function to get one job 
   const getJobs = async (token) => {
     const res = await axios.get(`/api/jobs/${id}`, {
       headers: {Authorization: token}
@@ -37,50 +36,59 @@ const UpdateJob = () => {
     setJob(res.data); 
   }
 
-
+  //using useEffect to fill out the form with the information of the job to be updated
   useEffect(() => {
     const token = localStorage.getItem('tokenStore');
     setToken(token);
     if (token) {
         getJobs(token);
     }
-}, []);
+  }, []);
 
-const onChangeInput = e => {
-  const { name, value } = e.target;
-  setJob({ ...job, [name]: value })
-};
+  //Custom hook for handling input boxes
+  const onChangeInput = e => {
+    const { name, value } = e.target;
+    setJob({ ...job, [name]: value })
+  };
 
-const jobForm = async e => {
+  
+  const jobForm = async e => {
   e.preventDefault()
   try {
     const token = localStorage.getItem('tokenStore')
     if(token){
       const { name, company, email, phone, position, submitted, application, interview, offer } = job;
-
-        const newJob = { name, company, email, phone, position, submitted, application, interview, offer};
-          await axios.put(`/api/jobs/${id}`, newJob, {
-              headers: {Authorization: token}
-            })
-          
-          return history.push('/')
-        }
-      } catch (err) {
+      
+      //creating object to send with put request 
+      const newJob = { name, company, email, phone, position, submitted, application, interview, offer};
+      
+      //put request to update a job
+      await axios.put(`/api/jobs/${id}`, newJob, {
+          headers: {Authorization: token}
+        })
+      
+      // redirect to the MainContainer     
+      return history.push('/')
+    }
+    } catch (err) {
       window.location.href = "/";
     }
   }
   
+
   const handleDelete = async e => {
     e.preventDefault()
- try {
-  const deleted = axios.delete(`/api/jobs/${id}`, {
-    headers: {Authorization: token}
-  })
-  return history.push('/')
- } catch (error) {
-  window.location.href = "/";
- }
-  }
+    try {
+      //delete request to delete a job
+      const deleted = axios.delete(`/api/jobs/${id}`, {
+      headers: {Authorization: token}
+      })
+      //redirecting to the MainContainer
+      return history.push('/')
+      } catch (error) {
+        window.location.href = "/";
+      }
+    }
 
 
 return (

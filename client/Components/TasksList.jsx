@@ -14,9 +14,11 @@ const TasksList = ({tasks, deleteTask, updateTask }) => {
   const [taskId, setTaskId] = useState('');
   const [isEditing, setIsEditing] = useState(false);
   const [updatedTask, setUpdatedTask] = useState({
-    title: '', // text describing the task
-    date: '', // text describing the task
+    title: '', 
+    date: '', 
   });
+
+  // Custom hook for handling input boxes
   const updateTaskState = (e) => {
     const { name, value } = e.target
     setUpdatedTask({
@@ -24,6 +26,8 @@ const TasksList = ({tasks, deleteTask, updateTask }) => {
       [name]: value
     });
   };
+
+  //Update and Reset input box
   const updateAndReset = (input, e) => {
     e.preventDefault();
     updateTask(input, taskId);
@@ -34,22 +38,24 @@ const TasksList = ({tasks, deleteTask, updateTask }) => {
     });
     setTaskId('');
   };
+
+  //styling to hide the input boxes that allows us to edit a task 
   const style = {
     visibility: isEditing ? "visible" : "hidden",
     opacity: isEditing ? 1 : 0
 }
-  return(
-<List>
-    {tasks.map((task) => (
+
+  return (
+    <List>
+      {tasks.map((task) => (
       <ListItem key={task._id} dense button>
         <div className='task-title'>
           <ListItemText primary={task.title} />
-        </div>
-        
+        </div>  
         <div className='task-date'>
           <ListItemText  primary={new Date(task.date).toLocaleDateString()} />
         </div>
-      
+
       <ListItemSecondaryAction>
         <IconButton
           aria-label="Delete"
@@ -57,7 +63,8 @@ const TasksList = ({tasks, deleteTask, updateTask }) => {
             deleteTask(task._id);
           }}
         >
-          <DeleteIcon />
+      
+      <DeleteIcon />
         </IconButton>
         <IconButton
           aria-label="Update"
@@ -68,35 +75,37 @@ const TasksList = ({tasks, deleteTask, updateTask }) => {
             // updateTask(task);
           }}
         > 
-          <EditIcon />
+
+        <EditIcon />
         </IconButton>
       </ListItemSecondaryAction>
     </ListItem>
     ))}
-<div style={style}>
 
-<form onSubmit={e => updateAndReset(updatedTask, e)} className="task-form"> 
-<TextField 
-variant="outlined"
-margin="normal"
-name='title'
-value={updatedTask.title}
-placeholder='Task'
-required
-onChange={updateTaskState}
-/>
-<TextField 
-variant="outlined"
-margin="normal"
-name='date'
-value={updatedTask.date}
-placeholder='Date'
-onChange={updateTaskState}
-/>
-<button type='submit' />
-</form>
-</div> 
-  </List>
+      <div style={style}>
+        <form onSubmit={e => updateAndReset(updatedTask, e)} className="task-form"> 
+            <TextField 
+              variant="outlined"
+              margin="normal"
+              name='title'
+              value={updatedTask.title}
+              placeholder='Task'
+              required
+              onChange={updateTaskState}
+            />
+
+            <TextField 
+              variant="outlined"
+              margin="normal"
+              name='date'
+              value={updatedTask.date}
+              placeholder='Date'
+              onChange={updateTaskState}
+            />
+          <button type='submit' />
+        </form>
+      </div> 
+    </List>
   )
 }
 export default TasksList;
