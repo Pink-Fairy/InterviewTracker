@@ -53,7 +53,17 @@ export default function JobForm ()  {
                 await axios.post('/api/jobs', newJob, {
                     headers: {Authorization: token}
                 })
-                
+                setJob({
+                  name: "", 
+                  company: "", 
+                  email: "", 
+                  phone: "", 
+                  position: "",
+                  submitted: "", 
+                  application: "", 
+                  interview: "",
+                  offer: ""
+            });
                 return history.push('/')
             }
         } catch (err) {
@@ -61,46 +71,6 @@ export default function JobForm ()  {
         }
    }
   
-  // const onChangeInput = e => {
-  //       const { name, company, email, phone, position, submitted, application, interview, offer } = e.target;
-  //       setCreateJob({ ...createJob, [name]: value })
-  //   };
-
-//   useEffect(() => {
-//     const token = localStorage.getItem('tokenStore');
-//     setToken(token);
-// }, []);
-
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-
-  //   fetch('/api/jobs', {
-  //     method: 'POST', 
-  //     headers: {
-  //       "Content-Type": "Application/JSON",
-  //       "Authorization": token
-  //     },
-  //     body: JSON.stringify({  
-  //       name, 
-  //       company, 
-  //       email, 
-  //       phone, 
-  //       position,
-  //       submitted, 
-  //       application, 
-  //       interview,
-  //       offer
-  //     })
-  //   })
-  //   .then(res => res.json())
-  //   .then(res => console.log(res))
-  //   .catch(err => console.log(err))
-  // };
-
-  // const onSubmitForm =(e) => {
-  //   e.stopPropagation()
-  // history.push(`/`)
-  // }
 
   return (
     <form onSubmit={jobForm} >

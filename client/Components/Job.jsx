@@ -66,7 +66,6 @@ export default function Job() {
         <TableBody>
           {jobs.map((job) => (
             <TableRow key={job._id} onClick={(e)=> handleSelectJob(e, job._id)}>
-            {/* <TableRow key={job._id} onClick={(e)=> handleSelectJob(e, job._id)}> */}
               <TableCell component="th" scope="row">
                 {job.name}
               </TableCell>
