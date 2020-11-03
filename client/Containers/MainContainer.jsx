@@ -9,6 +9,7 @@ import Menu from '../Components/Menu.jsx';
 import UpdateJob from './UpdateJob.jsx';
 import TaskListHolder from '../Components/TaskListHolder.jsx';
 
+//for UI design: https://material-ui.com/getting-started/usage/
 
 
 export default function MainContainer({setIsLogin}) {
@@ -19,12 +20,12 @@ export default function MainContainer({setIsLogin}) {
           <Route exact path="/">
           <div className="grid-container">
           <Header setIsLogin={setIsLogin} />
-        <div className="Menu"><Menu/></div>
-        <div className="Calendar"><Calendar /></div>
-        <div className="Task"><TaskListHolder /></div>
-        <div className="Job"><Job /></div> 
-        <div className="AddJob"><JobForm /></div>
-        </div>
+            <div className="Menu"><Menu/></div>
+            <div className="Calendar"><Calendar /></div>
+            <div className="Task"><TaskListHolder /></div>
+            <div className="Job"><Job /></div> 
+            <div className="AddJob"><JobForm /></div>
+            </div>
           </Route>
         <Route path='/update/:id' component={UpdateJob} exact/>
         </Switch>

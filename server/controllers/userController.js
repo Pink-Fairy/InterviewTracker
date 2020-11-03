@@ -3,7 +3,6 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/usermodel');
 
 const userController = {
-	//register a user
 	userRegistration: async (req, res) => {
 		try {
 			// saving user's input
@@ -21,7 +20,7 @@ const userController = {
 			// create a new user
 			const newUser = new User({ username, email, password: passwordHash });
 
-			//save new user
+			//to save a new user in mongoDB
 			await newUser.save();
 
 			res.json({
@@ -34,16 +33,13 @@ const userController = {
 		}
 	},
 
-	//login user
 	userLogin: async (req, res) => {
 		try {
 			// saving user's input
 			const { email, password } = req.body;
 
-			// check in email already exists
+			// check if email already exists in mongodb
 			const user = await User.findOne({ email });
-
-			//if user does not exist
 			if (!user)
 				return res.status(400).json({
 					message: 'The email does not exist',
@@ -55,18 +51,15 @@ const userController = {
 				return res.status(400).json({
 					message: 'incorrect password',
 				});
-
 			// if login is successful create a new token
 			const payload = {
 				id: user._id,
 				name: user.username,
 			};
-
-			// create a token
+			// create a token, it expires in 1 day, you can change it to anytime
 			const token = jwt.sign(payload, process.env.TOKEN_SECRET, {
 				expiresIn: '1d',
 			});
-
 			// send this token in the front end
 			res.json({ token });
 		} catch (err) {
@@ -78,17 +71,13 @@ const userController = {
 
 	verifiedToken: (req, res) => {
 		try {
-			//get the token from the header
 			const token = req.header('Authorization');
-
-			//if no token, prevent to log in
-			if (!token) return res.send(false);
+			if (!token) return res.send(false); // prevent to log in
 
 			// check if token exist
 			jwt.verify(token, process.env.TOKEN_SECRET, async (err, verified) => {
 				if (err) return res.send(false);
-
-				//check if user exist
+				//user going to be find by id, if you doesnt exist - false
 				const user = await User.findById(verified.id);
 				if (!user) return res.send(false);
 				return res.send(true);

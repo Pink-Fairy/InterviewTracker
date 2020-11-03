@@ -10,6 +10,8 @@ import EditIcon from '@material-ui/icons/Edit';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 
+//for UI design: https://material-ui.com/getting-started/usage/
+
 const TasksList = ({tasks, deleteTask, updateTask }) => {
   const [taskId, setTaskId] = useState('');
   const [isEditing, setIsEditing] = useState(false);
