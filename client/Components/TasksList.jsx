@@ -9,6 +9,12 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
+
+
+
+
+
+
 const TasksList = ({tasks, deleteTask, updateTask }) => {
   const [taskId, setTaskId] = useState('');
   const [isEditing, setIsEditing] = useState(false);
@@ -16,6 +22,7 @@ const TasksList = ({tasks, deleteTask, updateTask }) => {
     title: '', // text describing the task
     date: '', // text describing the task
   });
+
   const updateTaskState = (e) => {
     const { name, value } = e.target
     setUpdatedTask({

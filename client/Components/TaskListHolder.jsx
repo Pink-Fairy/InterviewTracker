@@ -15,6 +15,7 @@ const TaskListHolder = () => {
   // const initialState = localStorage.getItem('tasks') || [];
   const [tasks, setTasks] = useState([]);
   const [token, setToken] = useState('');
+  
   const getTask = async(token) => {
     const response = await axios.get('/api/tasks', {
       headers: {Authorization: token}

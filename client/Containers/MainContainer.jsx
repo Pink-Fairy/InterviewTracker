@@ -26,20 +26,8 @@ export default function MainContainer({setIsLogin}) {
         <div className="AddJob"><JobForm /></div>
         </div>
           </Route>
-        <Route path='/update/:id' component={UpdateJob} exact/>
+        <Route exact path='/update/:id' component={UpdateJob} />
         </Switch>
       </Router>
     )
   };
-
-
-  // <Router>
-  // <div className='notes-page'>
-  //         <Header setIsLogin={setIsLogin} />
-  //         <section>
-  //             <Route path='/' component={Home} exact/>
-  //             <Route path='/create' component={CreateNote} exact />
-  //             <Route path='/edit/:id' component={EditNote} exact/>
-  //         </section>
-  // </div>
-  // </Router>
