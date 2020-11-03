@@ -9,6 +9,8 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import DraftsIcon from '@material-ui/icons/Drafts';
 import SendIcon from '@material-ui/icons/Send';
 
+//for UI design: https://material-ui.com/getting-started/usage/
+
 const StyledMenu = withStyles({
   paper: {
     border: '1px solid #d3d4d5',
