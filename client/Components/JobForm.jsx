@@ -54,7 +54,8 @@ export default function JobForm ()  {
                 await axios.post('/api/jobs', newJob, {
                     headers: {Authorization: token}
                 })
-                setJob({
+                
+              setJob({
                   name: "", 
                   company: "", 
                   email: "", 
@@ -71,7 +72,9 @@ export default function JobForm ()  {
             window.location.href = "/";
         }
    }
-  
+
+
+
 
   return (
     <form onSubmit={jobForm} >

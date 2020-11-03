@@ -27,9 +27,8 @@ export default function MainContainer({setIsLogin}) {
             <div className="AddJob"><JobForm /></div>
             </div>
           </Route>
-        <Route path='/update/:id' component={UpdateJob} exact/>
+        <Route exact path='/update/:id' component={UpdateJob} />
         </Switch>
       </Router>
     )
   };
-

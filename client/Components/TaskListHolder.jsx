@@ -12,16 +12,16 @@ import TaskForm from './TaskForm.jsx';
 
   const TaskListHolder = () => {
   // set an initial state: either get all tasks from mongo or set it to an empty array
-    const [tasks, setTasks] = useState([]);
-    const [token, setToken] = useState('');
-    const getTask = async(token) => {
-      const response = await axios.get('/api/tasks', {
-        headers: {Authorization: token}
-      })
-      setTasks(response.data);
-    };
-    
-    //useEffect will keep rerendering when the tasks will be updated
+  // const initialState = localStorage.getItem('tasks') || [];
+  const [tasks, setTasks] = useState([]);
+  const [token, setToken] = useState('');
+  
+  const getTask = async(token) => {
+    const response = await axios.get('/api/tasks', {
+      headers: {Authorization: token}
+    })
+    setTasks(response.data);
+  };
     useEffect(() => {
       const token = localStorage.getItem('tokenStore');
       setToken(token);

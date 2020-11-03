@@ -12,8 +12,8 @@ export default function Header({ setIsLogin }) {
     return (
    
         <div className="Header">
-            <Link to='/' onClick={logoutSubmit} className="logout">LOGOUT</Link> 
-            <Avatar alt="Remy Sharp" src="https://freesvg.org/img/pink-fairy.png" />
+            <Link to='/' onClick={logoutSubmit} className="logout">LOGOUT</Link>
+            <Avatar alt="Remy Sharp" src="https://freesvg.org/img/pink-fairy.png" />  
         </div>
         
     )

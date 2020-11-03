@@ -10,7 +10,10 @@ import EditIcon from '@material-ui/icons/Edit';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 
-//for UI design: https://material-ui.com/getting-started/usage/
+
+
+
+
 
 const TasksList = ({tasks, deleteTask, updateTask }) => {
   const [taskId, setTaskId] = useState('');
@@ -20,7 +23,6 @@ const TasksList = ({tasks, deleteTask, updateTask }) => {
     date: '', 
   });
 
-  // Custom hook for handling input boxes
   const updateTaskState = (e) => {
     const { name, value } = e.target
     setUpdatedTask({
