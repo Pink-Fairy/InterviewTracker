@@ -1,7 +1,10 @@
-// 'jot' auth = standard way to encrypt pw, etc 
+// 'jwt' auth = standard way to encrypt pw, etc 
 const jwt = require('jsonwebtoken'); 
 
-
+// creating a token in local storage. how to test in browser:
+//dev tolls, application, localStorage
+//to test something in postman:
+//add the token in headers with Authorization
 const auth = (req, res, next) => {
     try {
         const token = req.header("Authorization");

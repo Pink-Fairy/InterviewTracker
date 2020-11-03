@@ -1,6 +1,8 @@
 const JobList = require('../models/jobListmodel');
 
 const jobListController = {
+
+	//get the list of jobs by checking user id
 	getAlljobs: async (req, res) => {
 		try {
 			const jobs = await JobList.find({ user_id: req.user.id });
@@ -9,7 +11,7 @@ const jobListController = {
 			return res.status(500).json({ msg: 'problem with getJobs' });
 		}
 	},
-
+	//create one item with job in db
 	createOneJob: async (req, res) => {
 		try {
 			const {
@@ -41,7 +43,7 @@ const jobListController = {
 			return res.status(500).json({ msg: 'problem with CreateOneJob' });
 		}
 	},
-
+	//to delete the job - find the id of job item (created by mongodb)
 	deleteJob: async (req, res) => {
 		try {
 			await JobList.findByIdAndDelete(req.params.id);
@@ -50,7 +52,7 @@ const jobListController = {
 			return res.status(500).json({ msg: 'problem with deleteJob' });
 		}
 	},
-
+	//to update job item - use put request and id
 	updateJob: async (req, res) => {
 		try {
 			const {
@@ -83,7 +85,7 @@ const jobListController = {
 			return res.status(500).json({ msg: 'problem with updateJob' });
 		}
 	},
-
+	//to get one job item you can by accessing the job id
 	getOneJob: async (req, res) => {
 		try {
 			const job = await JobList.findById(req.params.id);

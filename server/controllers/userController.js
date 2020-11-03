@@ -19,7 +19,8 @@ const userController = {
 
           // create a new user
           const newUser =  new User ({username, email, password: passwordHash})
-
+          
+          //to save a new user in mongoDB
           await newUser.save();
 
           res.json({
@@ -37,7 +38,7 @@ const userController = {
          // saving user's input
          const { email, password } = req.body; 
         
-          // check in email already exists
+          // check if email already exists in mongodb
           const user = await User.findOne({ email });
           if(!user) return res.status(400).json({
             message: 'The email does not exist'
@@ -53,7 +54,7 @@ const userController = {
             id: user._id,
             name: user.username
           }
-          // create a token 
+          // create a token, it expires in 1 day, you can change it to anytime 
           const token = jwt.sign(payload, process.env.TOKEN_SECRET, {
             expiresIn: '1d'
           });
@@ -74,7 +75,8 @@ const userController = {
 
          // check if token exist 
          jwt.verify(token, process.env.TOKEN_SECRET, async (err, verified) => {
-           if(err) return res.send(false);
+           if (err) return res.send(false);
+           //user going to be find by id, if you doesnt exist - false
            const user = await User.findById(verified.id);
            if(!user) return res.send(false);
            return res.send(true)
