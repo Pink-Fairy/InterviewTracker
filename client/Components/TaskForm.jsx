@@ -36,7 +36,7 @@ const TaskForm = ({getTask}) => {
       setTask({
         ...task
       });
-      // console.log(task); //{task: "buy milk", date: "October 31,2020"}
+
 
       const { title, date } = task;
       const newTask = { title, date };
@@ -47,10 +47,6 @@ const TaskForm = ({getTask}) => {
         headers: {Authorization: token}
       })
       .then(res => {
-        console.log(res);
-        // addTask({
-        //   ...task
-        // });
         getTask(token);
 
       })
@@ -66,26 +62,6 @@ const TaskForm = ({getTask}) => {
 
  };
 
-
-
-//  const handleSubmit = (e) => {
-//    e.preventDefault(); // prevent deault browser form functionality
-//    // gets called if task is not empty by calling trim function that will remove white spaces
-//    if (task.task.trim()) {
-//      addTask({
-//        ...task
-//        // need to add id part here for retrieving that specific id from database 
-//        // id: mongoDB id
-//      });
-
-//      setTask({
-//        ...task, 
-//        task: '',
-//        date: ''
-//      });
-
-//    } 
-//  }
 
   return (
     <form onSubmit={taskForm} className="task-form">
