@@ -51,6 +51,14 @@ const tasksController = {
 			return res.status(500).json({ msg: 'problem with updateTask' });
 		}
 	},
+	getDate: async (req, res) => {
+		try {
+			const tasks = await Task.find({ date: req.date });
+			res.json(tasks);
+		} catch (err) {
+			return res.status(500).json({ msg: 'problem with getDate' });
+		}
+	},
 };
 
 module.exports = tasksController;
