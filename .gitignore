@@ -2,3 +2,4 @@
 **/config
 **/build
 package-lock.json
+globalConfig.json
