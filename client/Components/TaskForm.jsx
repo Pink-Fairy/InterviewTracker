@@ -74,7 +74,7 @@ const TaskForm = ({getTask}) => {
         placeholder='Date'
         onChange={handleTaskInputChange}
      />
-      <button type='submit' className="button-task"/>
+      <button type='submit'>Click Me</button>
     </form>
   );
 }

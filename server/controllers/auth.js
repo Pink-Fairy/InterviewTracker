@@ -10,6 +10,7 @@ const auth = (req, res, next) => {
 	try {
 		//get the token from the header
 		const token = req.header('Authorization');
+		// console.log(token)
 		//check if token exist
 		if (!token) return res.status(400).json({ msg: 'Invalid Auth' });
 		//if token, check if it is matching with the user's token
@@ -21,6 +22,7 @@ const auth = (req, res, next) => {
 	} catch (err) {
 		return res.status(500).json({ msg: err.message }); // 500 = backend error
 	}
+	
 };
 
 module.exports = auth;
