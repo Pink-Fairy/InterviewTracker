@@ -9,12 +9,13 @@ const mongoose = require('mongoose');
 const userRouter = require('./routers/userRouter');
 const tasksRouter = require('./routers/tasksRouter');
 const jobListRouter = require('./routers/jobListRouter');
+var bodyParser = require('body-parser')
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 app.use(express.static('build'));
-
+app.use(express.urlencoded())
 //load config file
 dotenv.config({ path: './config/config.env' });
 
