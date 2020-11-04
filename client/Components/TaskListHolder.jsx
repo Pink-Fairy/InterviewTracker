@@ -60,7 +60,7 @@ import TaskForm from './TaskForm.jsx';
 
   return (
     <div className="tasks_container">
-      <TaskForm getTask={getTask}/>
+      {/* <TaskForm getTask={getTask}/> */}
       <TasksList 
       tasks={tasks} 
       deleteTask={deleteTask}

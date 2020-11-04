@@ -70,7 +70,7 @@ const TasksList = ({tasks, deleteTask, updateTask }) => {
       
       <DeleteIcon />
         </IconButton>
-        <IconButton
+        {/* <IconButton
           aria-label="Update"
           onClick={() => {
             {console.log(task._id)}
@@ -81,7 +81,7 @@ const TasksList = ({tasks, deleteTask, updateTask }) => {
         > 
 
         <EditIcon />
-        </IconButton>
+        </IconButton> */}
       </ListItemSecondaryAction>
     </ListItem>
     ))}
