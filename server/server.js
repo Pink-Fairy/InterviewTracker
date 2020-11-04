@@ -46,7 +46,7 @@ connectDB();
 
 //respond with main app
 app.get('/', (req, res) => {
-	res.sendFile(path.resolve(__dirname, '../client/index.html'));
+	res.status(200).sendFile(path.resolve(__dirname, '../client/index.html'));
 });
 
 // catch-all route handler for any requests to an unknown route
