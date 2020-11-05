@@ -54,15 +54,15 @@ export default function Job() {
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>name</TableCell>
-            <TableCell align="right">company</TableCell>
-            <TableCell align="right">email</TableCell>
-            <TableCell align="right">phone</TableCell>
-            <TableCell align="right">position</TableCell>
-            <TableCell align="right">submitted</TableCell>
-            <TableCell align="right">application</TableCell>
-            <TableCell align="right">interview</TableCell>
-            <TableCell align="right">offer</TableCell>
+            <TableCell>Name</TableCell>
+            <TableCell align="right">Company</TableCell>
+            <TableCell align="right">Email</TableCell>
+            <TableCell align="right">Phone</TableCell>
+            <TableCell align="right">Position</TableCell>
+            <TableCell align="right">Submitted</TableCell>
+            <TableCell align="right">Application</TableCell>
+            <TableCell align="right">Interview</TableCell>
+            <TableCell align="right">Offer</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

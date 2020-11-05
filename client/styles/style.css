@@ -1,3 +1,4 @@
+
 * {
 	font-family: Montserrat, sans-serif !important;
 	color: #939ab6 !important;
@@ -27,8 +28,7 @@ a {
 }
 
 .Menu {
-	padding-top: 50px;
-	padding-left: 25px;
+	grid-area: 1 / 1 / 1 / 1;
 }
 
 .Header {
@@ -41,7 +41,7 @@ a {
 }
 
 .Calendar {
-	grid-area: 2 / 2 / 4 / 4;
+	grid-area: 4 / 2 / 1 / 6;
 }
 
 .Task {
@@ -97,7 +97,12 @@ button {
 	border-radius: 7px !important;
 	background-color: #cccccc;
 	box-shadow: none !important;
-	margin-top: 5px;
+}
+
+#task-button {
+	padding: 5;
+margin-top: 20px;
+height: 50px;
 }
 
 body {
@@ -160,7 +165,6 @@ section {
 .create-note input,
 .create-note button {
 	width: 100%;
-	height: 40px;
 	padding: 0 5px;
 }
 
@@ -211,16 +215,15 @@ table.MuiTable-root {
 }
 
 .MuiFormControl-root {
-	margin: 0 auto !important;
 }
 
 .MuiOutlinedInput-input {
-	padding: 18.5px 70px !important;
 }
 
 button.react-calendar__tile {
 	height: 50px !important;
-	background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%) !important;
+	background: rgb(204,204,204);
+	color: #2a3465;
 }
 
 .MuiPaper-root {
@@ -237,7 +240,6 @@ form.task-form {
 }
 
 .MuiInputBase-input {
-	width: 200px !important;
 	background-color: #939ab6;
 }
 
