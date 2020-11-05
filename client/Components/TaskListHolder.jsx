@@ -10,17 +10,34 @@ import TaskForm from './TaskForm.jsx';
   2. the dependency array - param that determines if the effect gets fired or not. if one or more
       variables in the array changes, then the effect changes, if it empty, the effect will be fired with the component is initially rendered */ 
 
-  const TaskListHolder = () => {
+  const TaskListHolder = (props) => {
   // set an initial state: either get all tasks from mongo or set it to an empty array
   // const initialState = localStorage.getItem('tasks') || [];
   const [tasks, setTasks] = useState([]);
   const [token, setToken] = useState('');
   
   const getTask = async(token) => {
-    const response = await axios.get('/api/tasks', {
-      headers: {Authorization: token}
-    })
-    setTasks(response.data);
+    // check if calendar date has been clicked
+    if (props.calendarDate === '') {
+      
+      const response = await axios.get('/api/tasks', {
+        headers: {Authorization: token}
+      })
+      setTasks(response.data);
+
+    } else {
+      // console.log(props.calendarDate.toLocaleDateString());
+
+      let date = new Date(props.calendarDate).toISOString();
+      date = date.slice(0,10);
+
+      console.log(date)
+      //console.log(props.calendarDate.toISOString())
+      const result = await axios.get(`/api/tasks/getDate/${date}`, {
+        headers: {Authorization: token}
+      });
+      setTasks(result.data);
+    }
   };
     useEffect(() => {
       const token = localStorage.getItem('tokenStore');
