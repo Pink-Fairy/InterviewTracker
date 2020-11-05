@@ -15,6 +15,8 @@ import TaskListHolder from '../Components/TaskListHolder.jsx';
 
 export default function MainContainer({setIsLogin}) {
   
+
+
     return (
       <Router>
         <Switch>
@@ -23,7 +25,7 @@ export default function MainContainer({setIsLogin}) {
           <Header setIsLogin={setIsLogin} />
             <div className="Menu"><TaskForm/></div>
             <div className="Calendar"><Calendar /></div>
-            <div className="Task"><TaskListHolder /></div>
+            {/* <div className="Task"><TaskListHolder /></div> */}
             <div className="Job"><Job /></div> 
             <div className="AddJob"><JobForm /></div>
             </div>

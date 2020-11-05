@@ -6,8 +6,8 @@ title: {
     required: true
 },
 date: {
-    type: Date,
-    default: Date.now
+    type: String,
+    required:true,
     },
 user_id: {
     type: String,

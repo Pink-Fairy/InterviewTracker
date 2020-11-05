@@ -53,7 +53,14 @@ const tasksController = {
 	},
 	getDate: async (req, res) => {
 		try {
-			const tasks = await Task.find({ date: req.date });
+			// console.log(req.params.date)
+			// console.log(new Date(req.params.date).toISOString())
+			// console.log(Date.parse(req.params.date).toISOString())
+			// let date = new Date(Date.parse(req.params.date)).setHours(0,0,0,0);
+			// let date = new Date(Date.parse(req.params.date)).toISOString()
+			// console.log(date)asdsad
+			
+			const tasks = await Task.find({ date: req.params.date});
 			res.json(tasks);
 		} catch (err) {
 			return res.status(500).json({ msg: 'problem with getDate' });

@@ -57,20 +57,20 @@ const TasksList = ({tasks, deleteTask, updateTask }) => {
           <ListItemText primary={task.title} />
         </div>  
         <div className='task-date'>
-          <ListItemText  primary={new Date(task.date).toLocaleDateString()} />
+          <ListItemText  primary={(new Date(task.date).toUTCString().slice(0,16))} />
         </div>
 
       <ListItemSecondaryAction>
         <IconButton
           aria-label="Delete"
-          onClick={() => {
+          onClick={() => {  
             deleteTask(task._id);
           }}
         >
       
       <DeleteIcon />
         </IconButton>
-        <IconButton
+        {/* <IconButton
           aria-label="Update"
           onClick={() => {
             {console.log(task._id)}
@@ -81,7 +81,7 @@ const TasksList = ({tasks, deleteTask, updateTask }) => {
         > 
 
         <EditIcon />
-        </IconButton>
+        </IconButton> */}
       </ListItemSecondaryAction>
     </ListItem>
     ))}

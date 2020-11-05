@@ -18,7 +18,7 @@ router
 	.delete(auth, tasksController.deleteTask);
 
 router
-	.route('/:date')
+	.route('/getDate/:date')
 	.get(auth, tasksController.getDate);
 
 module.exports = router;
