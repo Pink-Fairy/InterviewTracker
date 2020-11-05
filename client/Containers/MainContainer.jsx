@@ -22,7 +22,6 @@ export default function MainContainer({setIsLogin}) {
         <Switch>
           <Route exact path="/">
           <div className="grid-container">
-          <Header setIsLogin={setIsLogin} />
             <div className="Menu"><TaskForm/></div>
             <div className="Calendar"><Calendar /></div>
             {/* <div className="Task"><TaskListHolder /></div> */}
